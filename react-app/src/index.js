@@ -11,13 +11,13 @@ console.log("---------var vs let vs const---------");
 //const -> block (pode ser aceddia num bloco, mas n�o podemos alterar o valor dela depois)
 
 function sayHello() {
-    for (var i = 0; i < 5; i++) {
-        console.log(i);
-    }
-    //se fizer isto e em cima tiver declado como var, vai funcionar
-    //se tiver sido declada como let, vai estourar pois � apenas acedida
-    //num bloco dentro do for
+  for (var i = 0; i < 5; i++) {
     console.log(i);
+  }
+  //se fizer isto e em cima tiver declado como var, vai funcionar
+  //se tiver sido declada como let, vai estourar pois � apenas acedida
+  //num bloco dentro do for
+  console.log(i);
 }
 sayHello();
 
@@ -30,17 +30,17 @@ console.log("---------Objects---------");
 // };
 //as fun��es podem ficar da seguinte forma, simplificando:
 const person = {
-    name: "Nuno",
-    walk() {
-        console.log("Walk it, like it, talk it... :)");
-    },
+  name: "Nuno",
+  walk() {
+    console.log("Walk it, like it, talk it... :)");
+  },
 };
 person.walk();
 
 console.log("---------Arrow functions---------");
 
 const square = function (number) {
-    return number * number;
+  return number * number;
 };
 
 //esta � uma forma f�cil de escrever uma fun��o
@@ -58,13 +58,13 @@ console.log(square2(2));
 //nota: o m�todo filter serve para filtrar arrays
 
 const jobs = [
-    { id: 1, isActive: true },
-    { id: 2, isActive: true },
-    { id: 3, isActive: false },
+  { id: 1, isActive: true },
+  { id: 2, isActive: true },
+  { id: 3, isActive: false },
 ];
 
 const activeJobs = jobs.filter(function (job) {
-    return job.isActive;
+  return job.isActive;
 });
 
 //passa para:
@@ -84,9 +84,9 @@ console.log(items);
 console.log("---------Object Destructuring---------");
 
 const address = {
-    street: "Bairro do crl",
-    city: "Braga",
-    country: "Portugal",
+  street: "Bairro do crl",
+  city: "Braga",
+  country: "Portugal",
 };
 
 //antes, teria que fazer assim para ter certos valores
@@ -123,3 +123,5 @@ const combined3 = [...first, "a", ...second, "b"];
 
 //o spred tbm pode ser usado para clonar:
 const clone = [...first];
+
+const getOla = "ola";
