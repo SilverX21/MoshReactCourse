@@ -12,3 +12,7 @@ Commands:
 2-cd my-app (will put on the directory where the app is)
 
 3- npm start (will start the app, opening in the browser)
+
+react-app -> app for tests and many other test related things. It's where I can test feely without worrying about deleting stuff or experimenting some libraries.
+
+counter-app -> this one has part of the course given by Mosh. It will be a counter for a shopping look alike web app :D
