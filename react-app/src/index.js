@@ -124,4 +124,54 @@ const combined3 = [...first, "a", ...second, "b"];
 //o spred tbm pode ser usado para clonar:
 const clone = [...first];
 
-const getOla = "ola";
+//usando objectos
+const obj1 = { name: "Nuno" };
+const obj2 = { job: "Programador" };
+//posso usar o spred, tal como fiz nos arrays, posso até colocar novas varáveis pelo meio
+//como por exemplo a location
+const combinedObjs = { ...obj1, ...obj2, location: "Braga" };
+console.log(combinedObjs);
+
+//tbm podemos clonar
+const cloneobj = { ...obj1 };
+
+console.log("---------Classes---------");
+
+//posso criar classes com construtores e métodos
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  walk() {
+    console.log("Walk!");
+  }
+}
+
+const person2 = new Person("Nuno");
+
+console.log("---------Inheritance---------");
+
+//em javascript tbm temos a capacidade de fazer classes herdar de outras, como em C#
+//para tal, posso fazer usando o extends (é como fazer Teacher: Person, em C#)
+// class Teacher extends Person {
+
+// }
+//deta forma, teria que passar o name ao inicializar um objecto do tipo Teacher, por causa
+//da classe Person, a qual precisa de passar no construtor
+//se tbm quisermos passar coisas no construtor da classe Teacher, temos de fazer:
+class Teacher extends Person {
+  //name é para a classe Person
+  constructor(name, degree) {
+    super(name); //super é uma palavra reservada, a qual passa o valor para a classe pai
+    this.degree = degree;
+  }
+
+  teach() {
+    console.log("Teach!");
+  }
+}
+
+const teacher = new Teacher("Mosh", "Engenharia Informática"); //aqui passo os valores
+
+console.log("---------Modules---------");
