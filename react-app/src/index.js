@@ -1,3 +1,4 @@
+import { Teacher } from "./teacher";
 //Algumas no��es importantes sobre javascript antes de come�ar
 
 console.log("---------var vs let vs const---------");
@@ -138,17 +139,9 @@ const cloneobj = { ...obj1 };
 console.log("---------Classes---------");
 
 //posso criar classes com construtores e métodos
-class Person {
-  constructor(name) {
-    this.name = name;
-  }
+// (o código está no ficheiro person.js)
 
-  walk() {
-    console.log("Walk!");
-  }
-}
-
-const person2 = new Person("Nuno");
+//const person2 = new Person("Nuno");
 
 console.log("---------Inheritance---------");
 
@@ -160,18 +153,27 @@ console.log("---------Inheritance---------");
 //deta forma, teria que passar o name ao inicializar um objecto do tipo Teacher, por causa
 //da classe Person, a qual precisa de passar no construtor
 //se tbm quisermos passar coisas no construtor da classe Teacher, temos de fazer:
-class Teacher extends Person {
-  //name é para a classe Person
-  constructor(name, degree) {
-    super(name); //super é uma palavra reservada, a qual passa o valor para a classe pai
-    this.degree = degree;
-  }
+// (o código está no ficheiro teacher.js)
 
-  teach() {
-    console.log("Teach!");
-  }
-}
-
-const teacher = new Teacher("Mosh", "Engenharia Informática"); //aqui passo os valores
+//const teacher = new Teacher("Mosh", "Engenharia Informática"); //aqui passo os valores
 
 console.log("---------Modules---------");
+//(criamos dois ficheiros: person.js e teacher.js) para
+//separar o código e manter isto mais arrumado e fácil de perceber
+//aqui em baixo importamos as classes, mas quando quiseres fazer isto faz sempre no início
+//do documento
+//import { Teacher } from "./teacher";
+
+//NOTA: no caso do reacto, importamos 99% das vezes desta for:
+//import React, { Component } from "react"; -> não usamos "./" antes porque vem nos módulos
+//do Node: node_modules
+
+const teacher = new Teacher("Mosh", "Engenharia Informática");
+teacher.teach();
+
+console.log("---------Named and Default Exports---------");
+//Default -> import ... from "...";
+//caso tenha uma função que queira exportar, para além da default, posso fazer da seguinte
+//forma: import ..., {...} from "...";
+//no caso do Teacher, seria: import Teacher, {promote} from "./teacher";
+//Named -> import {...} from "...";
